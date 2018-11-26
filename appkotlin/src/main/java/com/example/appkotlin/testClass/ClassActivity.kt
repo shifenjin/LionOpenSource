@@ -1,10 +1,8 @@
-package com.example.appkotlin
+package com.example.appkotlin.testClass
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import com.example.appkotlin.R
 import com.example.appkotlin.tools.BaseActivity
-import kotlinx.android.synthetic.main.activity_class.*
 import org.jetbrains.anko.info
 
 class ClassActivity : BaseActivity() {

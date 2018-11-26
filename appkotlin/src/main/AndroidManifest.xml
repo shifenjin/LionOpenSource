@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".anko.AnkoActivity" />
-        <activity android:name=".ClassActivity"></activity>
+        <activity android:name=".testClass.ClassActivity"></activity>
         <activity android:name=".coroutines.CoroutinesActivity">
         </activity>
         <activity android:name=".tools.recyclerView.test.RecyclerViewActivity">

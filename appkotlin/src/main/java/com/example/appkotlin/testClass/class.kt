@@ -1,4 +1,4 @@
-package com.example.appkotlin
+package com.example.appkotlin.testClass
 
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -20,7 +20,7 @@ abstract class Person constructor(name: String) : AnkoLogger{
 }
 
 // 实现类
-class BatMan : Person{
+class BatMan : Person {
     // 伴生
     companion object {
         // 伴生属性

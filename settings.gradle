@@ -1,4 +1,4 @@
-include ':app', ':appkotlin'
+include ':app', ':appkotlin', ':appLibCompiler', ':appLib', ':appLibAnnotation'
 //        ':android-volley-master'
 
 //project("xxx").projectDir = new File("path")

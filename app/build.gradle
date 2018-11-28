@@ -97,6 +97,10 @@ dependencies {
     // greendao
     implementation 'org.greenrobot:greendao:3.2.2'
 
+    // custom - bindview
+//    annotationProcessor project(':appLibCompiler')
+    api project(":appLibAnnotation")
+    api project(":appLib")
 }
 
 greendao {

@@ -9,6 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appLib" />
+            <option value="$PROJECT_DIR$/appLibAnnotation" />
+            <option value="$PROJECT_DIR$/appLibCompiler" />
             <option value="$PROJECT_DIR$/appkotlin" />
           </set>
         </option>

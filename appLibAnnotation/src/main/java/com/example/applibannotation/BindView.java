@@ -5,10 +5,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-// 适用对象 - 类、接口、枚举
+/**
+ * @author hiphonezhu@gmail.com
+ * @version [CompilerAnnotation, 17/6/20 09:48]
+ */
 @Target(ElementType.FIELD)
-// 生命周期 - 编译时
 @Retention(RetentionPolicy.CLASS)
-public @interface CustomBindViewAnnotation {
+public @interface BindView {
     int value();
 }

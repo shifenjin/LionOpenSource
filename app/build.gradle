@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 // greendao
 apply plugin: 'org.greenrobot.greendao'
 
+// AOP - AspectJX
+apply plugin: 'android-aspectjx'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -70,6 +73,9 @@ dependencies {
 
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
+    // 组件化模块
+    implementation project(":appmodule")
+
     // recyclerView
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
@@ -98,9 +104,13 @@ dependencies {
     implementation 'org.greenrobot:greendao:3.2.2'
 
     // custom - bindview
-//    annotationProcessor project(':appLibCompiler')
-    api project(":appLibAnnotation")
+    annotationProcessor project(':appLibCompiler')
     api project(":appLib")
+    api project(":appLibAnnotation")
+
+    // AOP - AspectJ
+
+
 }
 
 greendao {

@@ -83,16 +83,18 @@ public class CustomBVAnnotationProcessor extends AbstractProcessor {
                             .addModifiers(Modifier.PUBLIC)
                             // 构造函数 - 参数
                             .addParameter(ParameterSpec.builder(TypeName.get(classElement.asType()), "activity").build());
-            for (VariableInfo variableInfo : variableInfoListMap.get(classFullName)) {
-                int viewId = variableInfo.valueId;
-                String viewElementName = variableInfo.view.getSimpleName().toString();
-                String viewElementType = variableInfo.view.asType().toString();
-
-                // 构造函数 - 内容
-                constructorBuilder.addStatement("activity.$L = ($L)activity.findViewById($L)",
-                        viewElementName,
-                        viewElementType,
-                        viewId);
+            List<VariableInfo> variableInfoList = variableInfoListMap.get(classFullName);
+            if (variableInfoList != null) {
+                for (VariableInfo variableInfo : variableInfoList) {
+                    int viewId = variableInfo.viewId;
+                    String viewElementName = variableInfo.variableElement.getSimpleName().toString();
+                    String viewElementType = variableInfo.variableElement.asType().toString();
+                    // 构造函数 - 内容
+                    constructorBuilder.addStatement("activity.$L = ($L)activity.findViewById($L)",
+                            viewElementName,
+                            viewElementType,
+                            viewId);
+                }
             }
 
             // 构建 类
@@ -121,7 +123,7 @@ public class CustomBVAnnotationProcessor extends AbstractProcessor {
             // 处理元素类型为类的元素
             if (element.getKind() == ElementKind.FIELD) {
                 // 获取 元素注解的值（控件资源id）
-                int valueId = element.getAnnotation(CustomBindViewAnnotation.class).viewId();
+                int valueId = element.getAnnotation(CustomBindViewAnnotation.class).value();
                 // 将 元素 转换为 变量元素（成员变量）
                 VariableElement variableElement = (VariableElement) element;
                 // 获取 封装此元素的最里层元素（封装该成员变量的类元素）
@@ -143,17 +145,4 @@ public class CustomBVAnnotationProcessor extends AbstractProcessor {
         }
     }
 
-    // 变量元素信息
-    private class VariableInfo {
-
-        VariableInfo(int valueId, VariableElement view) {
-            this.valueId = valueId;
-            this.view = view;
-        }
-
-        // 变量元素的注解的 的 id 值
-        int valueId;
-        // 变量元素
-        VariableElement view;
-    }
 }

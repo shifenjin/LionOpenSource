@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".AppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,16 +19,18 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".RxjavaActivity"></activity>
+        <activity android:name=".RxjavaActivity" />
         <activity android:name=".OkhttpActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".GlideActivity"></activity>
+        <activity android:name=".GlideActivity" />
         <activity android:name=".database.SQLiteActivity" />
         <activity android:name=".data_structure.DataStructureActivity" />
         <activity android:name=".fragment.LionFragmentActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity">
-        </activity>
+        <activity android:name=".recyclerview.RecyclerViewActivity"></activity>
         <activity android:name=".annotation.AnnotationActivity">
+
+        </activity>
+        <activity android:name=".aop.AOPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

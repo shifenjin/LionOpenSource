@@ -13,6 +13,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
 
     buildTypes {
@@ -35,4 +40,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // Arouter
+    api "com.alibaba:arouter-api:1.4.1"
+    annotationProcessor "com.alibaba:arouter-compiler:1.2.2"
+
+    implementation 'com.google.code.gson:gson:2.8.2'
 }

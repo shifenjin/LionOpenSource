@@ -27,11 +27,19 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import com.example.appmouduleaccount.test.TestAccountActivity;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -118,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
         SQLiteOpenHelper sqLiteOpenHelper;
         LifecycleOwner lifecycleOwner;
 
+        Intent intent1 = new Intent(this, TestAccountActivity.class);
+        startActivity(intent1);
+
+        // test
+//        ViewParent
 
     }
 
@@ -170,5 +183,37 @@ public class MainActivity extends AppCompatActivity {
 //
 //    }
 
+    public String getValueByKey(String key, JsonObject jsonObject) {
 
+        if (jsonObject == null)
+            return null;
+
+        Set<Map.Entry<String, JsonElement>> entries = jsonObject.entrySet();
+        for (Map.Entry<String, JsonElement> entry : entries) {
+
+            JsonElement value = entry.getValue();
+
+            if (entry.getKey().equals(key)) {
+                return value.toString();
+            }
+            else if (value.isJsonNull()) {
+                continue;
+            }
+            else if (value.isJsonArray()) {
+                JsonArray jsonArray = value.getAsJsonArray();
+                while (jsonArray.iterator().hasNext()) {
+                    JsonElement next = jsonArray.iterator().next();
+
+                    // 递归
+                    return getValueByKey(key, next.getAsJsonObject());
+                }
+            }
+            else if (value.isJsonObject()) {
+                // 递归
+                return getValueByKey(key, value.getAsJsonObject());
+            }
+        }
+
+        return null;
+    }
 }

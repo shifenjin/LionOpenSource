@@ -12,8 +12,10 @@
             <option value="$PROJECT_DIR$/appLib" />
             <option value="$PROJECT_DIR$/appLibAnnotation" />
             <option value="$PROJECT_DIR$/appLibCompiler" />
-            <option value="$PROJECT_DIR$/appkotlin" />
-            <option value="$PROJECT_DIR$/appmodule" />
+            <option value="$PROJECT_DIR$/appLibPlugin" />
+            <option value="$PROJECT_DIR$/appmoduleA" />
+            <option value="$PROJECT_DIR$/appmoduleAccount" />
+            <option value="$PROJECT_DIR$/appmoduleB" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

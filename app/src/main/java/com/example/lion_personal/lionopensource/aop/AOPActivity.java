@@ -22,7 +22,7 @@ public class AOPActivity extends AppCompatActivity {
     @BehaviorTimeTrace
     private void testBehaviorTimeTrace() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

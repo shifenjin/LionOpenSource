@@ -33,7 +33,7 @@ import javax.lang.model.util.Elements;
 // 需要处理的注解
 @SupportedAnnotationTypes({"com.example.applibannotation.CustomBindViewAnnotation"})
 // 支持的源码版本
-@SupportedSourceVersion(SourceVersion.RELEASE_7)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 // 生成的METE-INF信息
 @AutoService(Processor.class)
 public class CustomBVAnnotationProcessor extends AbstractProcessor {

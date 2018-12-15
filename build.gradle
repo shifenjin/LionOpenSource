@@ -7,7 +7,10 @@ buildscript {
     repositories {
         google()
         jcenter()
-        mavenCentral()
+        // 本地maven仓库
+        maven {url uri('/Users/lion_personal/工作/android_open_source/localMavenRepositories/')}
+//        mavenCentral()
+
     }
 
     dependencies {
@@ -19,6 +22,9 @@ buildscript {
 
         // AOP - AspectJX
         classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
+
+        // 自定义插件
+        classpath 'com.lionshi.android:moudle_lifecycle_plugin:1.0.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

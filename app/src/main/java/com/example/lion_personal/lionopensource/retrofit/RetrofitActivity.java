@@ -1,5 +1,6 @@
 package com.example.lion_personal.lionopensource.retrofit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -34,5 +35,6 @@ public class RetrofitActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(retrofitResp -> {}, throwable -> {});
+
     }
 }

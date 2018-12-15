@@ -1,5 +1,6 @@
 package com.example.lion_personal.lionopensource.recyclerview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,7 +28,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
             recyclerViewDataItem.setIconUrlStr(imageUrlChuQiao);
             recyclerViewDataItemList.add(recyclerViewDataItem);
         }
-
         // Adapter
 //        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, recyclerViewDataItemList);
 

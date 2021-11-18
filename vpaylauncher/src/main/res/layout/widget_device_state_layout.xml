@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.widget.device_state.DeviceStatePanel
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="horizontal"
+	android:paddingBottom="3dp"
+	android:paddingLeft="3dp"
+	android:paddingTop="3dp">
+
+	<TextView
+		android:id="@+id/device_condition"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="2dp"
+		android:layout_weight="1"
+		android:ems="1"
+		android:text="正式环境"
+		android:textSize="7sp"
+	/>
+
+	<TextView
+		android:id="@+id/device_mode"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:ems="1"
+		android:text="运营模式"
+		android:textSize="7sp"
+	/>
+
+</com.yunnex.vpay.widget.device_state.DeviceStatePanel>

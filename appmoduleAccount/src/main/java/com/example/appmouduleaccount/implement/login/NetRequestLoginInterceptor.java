@@ -14,19 +14,23 @@ public class NetRequestLoginInterceptor implements LoginInterceptor {
     public void intercept(LoginChain chain) {
         boolean isRequestSuccess = true;
 
-        chain.getLoginCallBack().onProgress();
 
         Log.i("haha", "执行网络请求");
         LoginRequest loginRequest = chain.request();
 
         // 网络请求成功
         if (isRequestSuccess) {
+
+            LoginResult loginResult = chain.getLoginResult();
+            loginResult.isNetRequsetLoginSuccess = true;
+            loginResult.resultMsg = "网络请求成功";
+
             chain.proceed();
         }
         // 网络请求失败
         else {
             LoginResult loginResult = chain.result();
-            loginResult.isLoginSuccess = false;
+            loginResult.isNetRequsetLoginSuccess = false;
             loginResult.resultMsg = "网络请求失败";
 
             chain.getLoginCallBack().onError(loginResult);

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.alibaba.android.arouter.launcher.ARouter;
+//import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.applib.moudule_applifecycle_helpr.ModuleAppLifeCycleHelper;
 
 public class AppApplication extends Application {
@@ -15,14 +15,14 @@ public class AppApplication extends Application {
         super.onCreate();
 
         // ARouter
-        if (BuildConfig.DEBUG) {
-            ARouter.openDebug();
-            ARouter.openLog();
-        }
-        ARouter.init(this);
+//        if (BuildConfig.DEBUG) {
+//            ARouter.openDebug();
+//            ARouter.openLog();
+//        }
+//        ARouter.init(this);
 
         long start = System.currentTimeMillis();
-        ModuleAppLifeCycleHelper.getInstance().onCreate();
+        ModuleAppLifeCycleHelper.getInstance().notifyApplicationOnCreate(this);
         Log.i(AppApplication.class.getSimpleName(), String.valueOf(System.currentTimeMillis() - start));
 
         View view;

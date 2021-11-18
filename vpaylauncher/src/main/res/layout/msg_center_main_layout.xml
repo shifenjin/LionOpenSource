@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.msgcenter.function.main.MsgCenterMainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/msg_container_bg"
+    android:clickable="true">
+
+    <!-- 消息中心无消息时的布局 -->
+    <RelativeLayout
+        android:id="@+id/empty_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/empty_img"
+            android:layout_width="14dp"
+            android:layout_height="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/msg_empty_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/empty_img"
+            android:gravity="center_vertical"
+            android:text="@string/msg_center_empty_tip"
+            android:textColor="@color/msg_center_text_color"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- 消息中心显示消息布局 -->
+    <RelativeLayout
+        android:id="@+id/receive_panel"
+        android:layout_width="320dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:id="@+id/msg_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/msg_type_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/msg_type_goods" />
+
+            <TextView
+                android:id="@+id/msg_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/msg_type_img"
+                android:textColor="@color/msg_center_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/msg_type"
+            android:layout_marginBottom="19dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/msg_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:lines="2"
+                android:lineSpacingExtra="4dp"
+                android:ellipsize="end"
+                android:textColor="@color/msg_center_text_color"
+                android:textSize="11sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</com.yunnex.vpay.msgcenter.function.main.MsgCenterMainLayout>

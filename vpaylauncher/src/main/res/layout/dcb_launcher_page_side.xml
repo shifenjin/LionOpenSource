@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.launcher.view.LauncherPageLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:launcherPageLayout="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	launcherPageLayout:cell_move_left="true"
+	launcherPageLayout:cell_move_right="false">
+	<include
+		android:id="@+id/scrollCellLayout"
+		layout="@layout/dcb_scroll_cellgroup_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	</include>
+</com.yunnex.vpay.launcher.view.LauncherPageLayout>

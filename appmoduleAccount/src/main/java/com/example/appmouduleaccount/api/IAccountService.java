@@ -2,7 +2,8 @@ package com.example.appmouduleaccount.api;
 
 import com.example.appmouduleaccount.api.account_lifecycle.IAccountLifeCycleListener;
 import com.example.appmouduleaccount.api.init.IInitAccountCallBack;
-import com.example.appmouduleaccount.api.login.AccountLogin;
+import com.example.appmouduleaccount.api.login.IAccountLoginBuilder;
+import com.example.appmouduleaccount.implement.login.AccountLoginBuilder;
 
 public interface IAccountService {
 
@@ -11,7 +12,7 @@ public interface IAccountService {
      *
      * @return
      */
-    AccountLogin.Builder createLoginBuilder();
+    IAccountLoginBuilder createLoginBuilder();
 
     /**
      * 是否已登录

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/load_title_panel"
+        android:layout_width="@dimen/load_wificheck_icon_layout_width"
+        android:layout_height="@dimen/load_wificheck_icon_layout_height"
+		android:layout_marginTop="@dimen/load_wificheck_icon_layout_margin_top"
+		android:layout_centerHorizontal="true"
+		>
+
+        <ImageView
+            android:id="@+id/load_title_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+			android:src="@drawable/load_wifi_icon"
+			/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+		android:layout_below="@id/load_title_panel"
+        android:layout_marginTop="@dimen/load_wificheck_remind_margin_top"
+        android:text="请链接WIFI保证数据传输畅通"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/load_wificheck_remind_text_size" />
+
+    <com.yunnex.ui.textview.FButton
+        android:id="@+id/btn_open_wifi"
+        android:layout_width="@dimen/load_wificheck_btn_setting_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/load_wificheck_btn_setting_margin_top"
+        android:onClick="onBtnClick"
+        android:text="@string/load_wifi_btn"
+		android:textSize="@dimen/load_wificheck_btn_setting_text_size"
+        android:textColor="#0074eb"
+        fbutton:buttonColor="#9ad9ff"
+		fbutton:shadowColor="#c7eaff"
+        fbutton:cornerRadius="@dimen/load_wificheck_btn_setting_corner_radius"
+        fbutton:shadowEnabled="false" />
+
+    <Button
+        android:id="@+id/btn_skip_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_open_wifi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/load_wificheck_btn_skip_margin_top"
+        android:onClick="onBtnClick"
+        android:text="@string/load_skip_wifi_btn"
+		android:textSize="@dimen/load_wificheck_btn_skip_text_size"
+		android:textColor="#9ad9ff"
+		android:background="@color/transparent"
+	 />
+
+</RelativeLayout>

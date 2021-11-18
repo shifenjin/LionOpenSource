@@ -1,44 +1,43 @@
 package com.example.lion_personal.lionopensource;
 
 import android.app.Activity;
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.OnLifecycleEvent;
-import android.arch.lifecycle.ViewModel;
-import android.content.ContentProvider;
-import android.content.ContentValues;
+import androidx.lifecycle.LifecycleOwner;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.net.Uri;
-import android.os.AsyncTask;
+import android.content.SharedPreferences;
+import android.content.UriMatcher;
+import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ContextThemeWrapper;
-import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
+import android.os.Looper;
+import android.os.MessageQueue;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
+
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.example.appmouduleaccount.test.TestAccountActivity;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.jetbrains.annotations.NotNull;
-
+import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -95,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
         Executor executor;
         FutureTask futureTask;
 
-        AsyncTask asyncTask;
-
         ThreadPoolExecutor threadPoolExecutor;
 
         View view;
@@ -110,11 +107,6 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup.LayoutParams layoutParams;
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        ListView listView;
-        BaseAdapter baseAdapter;
-
-        RecyclerView recyclerView;
-
         Context context;
         ContextWrapper contextWrapper;
         ContextThemeWrapper contextThemeWrapper;
@@ -123,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
 //        intent.setDataAndType("", )
 //        intent.setAction(Intent.Action)
 
-        SQLiteOpenHelper sqLiteOpenHelper;
         LifecycleOwner lifecycleOwner;
 
         Intent intent1 = new Intent(this, TestAccountActivity.class);
@@ -132,6 +123,108 @@ public class MainActivity extends AppCompatActivity {
         // test
 //        ViewParent
 
+        Map map;
+        HashMap hashMap;
+        PriorityQueue priorityQueue = new PriorityQueue();
+
+//        SQLiteOpenHelper sqLiteOpenHelper = new SQLiteOpenHelper() {
+//            @Override
+//            public void onCreate(SQLiteDatabase db) {
+//                db.execSQL("");
+//            }
+//
+//            @Override
+//            public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+//
+//            }
+//        };
+//        SQLiteDatabase writableDatabase = sqLiteOpenHelper.getWritableDatabase().insert();
+//        sqLiteOpenHelper.getReadableDatabase();
+
+
+        UriMatcher a;
+        ContentResolver contentResolver;
+//        registerReceiver();
+
+//        unregisterComponentCallbacks();
+
+        SharedPreferences sharedPreferences;
+//        getSharedPreferences().
+
+        ListView listView = new ListView(this);
+        BaseAdapter baseAdapter1 = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return 0;
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                return null;
+            }
+        };
+        listView.setAdapter(baseAdapter1);
+        baseAdapter1.notifyDataSetChanged();
+
+//        listView.setOnItemClickListener();
+//        listView.setDivider();
+//        listView.setHorizontalScrollBarEnabled();
+//        listView.setVerticalScrollBarEnabled();
+//        listView.setSelection();
+//        listView.addFooterView();
+
+        RelativeLayout relativeLayout;
+        ConstraintLayout constraintLayout;
+        TabLayout tabLayout;
+        ViewPager viewPager = new ViewPager(this);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+        FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int i) {
+                return null;
+            }
+
+            @Override
+            public int getCount() {
+                return 0;
+            }
+        };
+        Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                return false;
+            }
+        });
+
+        Fragment fragment;
+        Drawable drawable;
+        ResolveInfo resolveInfo;
+        Handler handler1 = new Handler();
     }
 
     @Override

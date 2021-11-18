@@ -20,9 +20,9 @@ public class ModuleLifeCycleUtils {
      * 判断是不是ModuleAppLifeCycle$$Proxy.class文件
      * @return
      */
-    public static boolean isModuleAppLifeCycleProxyClass(File file) {
-        if (file.getName().startsWith(PROXY_CLASS_PACKAGE_NAME)
-                && file.getName().endsWith("$$Proxy.class"))
+    public static boolean isModuleAppLifeCycleProxyClass(String fileName) {
+        if (fileName.startsWith(PROXY_CLASS_PACKAGE_NAME)
+                && fileName.endsWith("$$Proxy.class"))
             return true;
         else
             return false;
@@ -66,7 +66,7 @@ public class ModuleLifeCycleUtils {
                 }
 
                 // 匹配目标.class文件
-                if (entryName.startsWith(PROXY_CLASS_PACKAGE_NAME)) {
+                if (isModuleAppLifeCycleProxyClass(entryName)) {
                     destClassNameList.add(entryName);
                 }
             }

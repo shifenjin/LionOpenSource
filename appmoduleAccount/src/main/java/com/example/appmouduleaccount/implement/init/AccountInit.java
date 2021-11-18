@@ -6,9 +6,9 @@ public class AccountInit {
 
     public void init() {
 
-        AccountManager.getInstance().onBeforeAccountInit();
+        AccountManager.getInstance().notifyBeforeAccountInit();
         // 初始化session
-        AccountManager.getInstance().onAfterAccountInit();
+        AccountManager.getInstance().notifyAfterAccountInit();
 
 
     }

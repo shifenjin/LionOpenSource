@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.view.dcb.DCBCellItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:padding="3dp">
+
+    <RelativeLayout
+        android:id="@+id/dcb_icon_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/icon_bg">
+
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_width="@dimen/dcb_icon_image_size"
+            android:layout_height="@dimen/dcb_icon_image_size"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dcb_icon_padding_top"></ImageView>
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dcb_title_size" />
+
+        <TextView
+            android:id="@+id/msgNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</com.yunnex.vpay.view.dcb.DCBCellItemLayout>

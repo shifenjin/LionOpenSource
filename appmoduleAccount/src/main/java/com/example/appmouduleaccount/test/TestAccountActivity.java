@@ -1,16 +1,16 @@
 package com.example.appmouduleaccount.test;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.appmouduleaccount.api.login.IAccountLoginBuilder;
+import com.example.appmouduleaccount.api.login.mode.AccountLoginModeFactory;
+import com.example.appmouduleaccount.api.login.type.AccountType;
 import com.example.appmouduleaccount.implement.AccountServiceImpl;
 import com.example.appmouduleaccount.R;
-import com.example.appmouduleaccount.api.login.AccountLogin;
 import com.example.appmouduleaccount.api.login.ILoginCallBack;
 import com.example.appmouduleaccount.api.login.domain.LoginResult;
-import com.example.appmouduleaccount.api.login.mode.AccountLoginMode;
-import com.example.appmouduleaccount.api.login.type.StaffAccountType;
 
 public class TestAccountActivity extends AppCompatActivity {
 
@@ -20,10 +20,10 @@ public class TestAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_account);
 
         AccountServiceImpl accountManager = new AccountServiceImpl();
-        AccountLogin.Builder loginBuilder = accountManager.createLoginBuilder();
+        IAccountLoginBuilder loginBuilder = accountManager.createLoginBuilder();
         loginBuilder
-                .loginMode(new AccountLoginMode("userName", "password"))
-                .accountType(new StaffAccountType())
+                .loginMode(AccountLoginModeFactory.create("userName", "password"))
+                .accountType(AccountType.STAFF)
                 .build()
                 .login(new ILoginCallBack() {
                     @Override

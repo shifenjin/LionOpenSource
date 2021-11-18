@@ -1,11 +1,13 @@
 package com.example.lion_personal.lionopensource;
 
 import android.app.Service;
+import androidx.lifecycle.LifecycleObserver;
 import android.content.Intent;
 import android.os.IBinder;
 
 public class MyService extends Service {
     public MyService() {
+
     }
 
     @Override

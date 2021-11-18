@@ -1,5 +1,8 @@
 include ':app',  ':appLibCompiler', ':appLib', ':appLibAnnotation', ':appmoduleA', ':appLibPlugin', ':appmoduleB', ':appmoduleAccount'
-//        ':android-volley-master'
-//          ':appkotlin',
+//include ':vpaylauncher'
+include ':appmoduleCall'
+//include ':AppStore'
+// include       ':android-volley-master'
+include          ':appkotlin'
 
 //project("xxx").projectDir = new File("path")

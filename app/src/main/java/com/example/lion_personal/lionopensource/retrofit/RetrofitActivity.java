@@ -1,15 +1,12 @@
 package com.example.lion_personal.lionopensource.retrofit;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.lion_personal.lionopensource.R;
 
-import io.reactivex.SingleObserver;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.Single;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,13 +25,16 @@ public class RetrofitActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 // 网络请求适配器
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .callFactory(new OkHttpClient())
                 .build();
 
         RetrofitApi api = retrofit.create(RetrofitApi.class);
-        api.method("path", new RetrofitReq())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(retrofitResp -> {}, throwable -> {});
+        Single<RetrofitResp> path = api.method("path", new RetrofitReq());
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(retrofitResp -> {}, throwable -> {});
 
+
+        // test
     }
 }

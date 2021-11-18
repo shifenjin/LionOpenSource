@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -13,9 +15,11 @@
             <option value="$PROJECT_DIR$/appLibAnnotation" />
             <option value="$PROJECT_DIR$/appLibCompiler" />
             <option value="$PROJECT_DIR$/appLibPlugin" />
+            <option value="$PROJECT_DIR$/appkotlin" />
             <option value="$PROJECT_DIR$/appmoduleA" />
             <option value="$PROJECT_DIR$/appmoduleAccount" />
             <option value="$PROJECT_DIR$/appmoduleB" />
+            <option value="$PROJECT_DIR$/appmoduleCall" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

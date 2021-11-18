@@ -14,16 +14,19 @@ public class CheckLoginInterceptor implements LoginInterceptor {
         boolean isLicense = true;
 
         Log.i("haha", "执行校验登录");
-//        LoginRequest loginRequest = chain.request();
 
+        LoginResult loginResult = chain.result();
         // 校验成功
         if (isLicense) {
+            loginResult.isCheckLoginSuccess = false;
+            loginResult.resultMsg = "校验成功";
+
             chain.proceed();
         }
         // 校验失败
         else {
-            LoginResult loginResult = chain.result();
-            loginResult.isLoginSuccess = false;
+
+            loginResult.isCheckLoginSuccess = false;
             loginResult.resultMsg = "校验失败";
 
             chain.getLoginCallBack().onError(loginResult);

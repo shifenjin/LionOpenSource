@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="LionOpenSource.app" target="1.8" />
+      <module name="LionOpenSource.appkotlin" target="1.8" />
+      <module name="LionOpenSource.appLib" target="1.8" />
+      <module name="LionOpenSource.appmoduleA" target="1.8" />
+      <module name="LionOpenSource.appmoduleAccount" target="1.8" />
+      <module name="LionOpenSource.appmoduleB" target="1.8" />
+      <module name="LionOpenSource.appmoduleCall" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

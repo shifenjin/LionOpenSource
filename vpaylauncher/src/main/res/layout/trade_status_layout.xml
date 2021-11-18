@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.datacenter.view.TradeStatusLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/sale_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/chart_container"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/top_container_bg">
+
+        <RelativeLayout
+            android:id="@+id/trade_sum"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/trade_sum_bg"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/total_trade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/trade_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="——"
+                    android:textColor="#427DCF"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:id="@+id/trade_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toLeftOf="@id/trade_money"
+                    android:textColor="#427DCF"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/trade_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/total_trade"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="当天交易额(元)"
+                android:textColor="#427DCF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/trade_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trade_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3sp"
+                android:text="——"
+                android:textColor="#427DCF"
+                android:textSize="8sp" />
+        </RelativeLayout>
+
+        <!-- 竖左分隔线 -->
+        <ImageView
+            android:id="@+id/dvs_vertical_left"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/trade_sum"
+            android:background="@color/chart_bg_1"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/dvs_vertical" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/dvs_vertical_left">
+
+            <LinearLayout
+                android:id="@+id/left_layout"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="53">
+
+                <RelativeLayout
+                    android:id="@+id/payout_ticket"
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="26"
+                    android:background="@color/chart_bg_1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/payout_ticket_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="派券"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/payout_ticket_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/payout_ticket_title"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="——"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- 水平分割线左半部分 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/chart_bg_1"
+                    android:scaleType="center"
+                    android:src="@drawable/dvs_level" />
+
+                <RelativeLayout
+                    android:id="@+id/solicit_guest"
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="26"
+                    android:background="@color/chart_bg_1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/solicit_guest_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="拉客"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/solicit_guest_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/solicit_guest_title"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="——"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- 竖右分隔线 -->
+            <ImageView
+                android:id="@+id/dvs_vertical_right"
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/left_layout"
+                android:background="@color/chart_bg_1"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:src="@drawable/dvs_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/dvs_vertical_right"
+                android:orientation="vertical"
+                android:weightSum="53">
+
+                <RelativeLayout
+                    android:id="@+id/cancel_ticket"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="26"
+                    android:background="@drawable/cancel_ticket_bg">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/cancel_ticket_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="核销"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/cancel_ticket_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cancel_ticket_title"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="——"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!-- 水平分割线右半部分 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/chart_bg_1">
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="match_parent"
+                        android:paddingRight="6dp"
+                        android:scaleType="center"
+                        android:src="@drawable/dvs_level" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/solicit_guest_chamption"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="26"
+                    android:background="@drawable/solicit_guest_champion">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/chamption_name_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="拉客冠军"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/chamption_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/chamption_name_title"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="——"
+                            android:textColor="#427DCF"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</com.yunnex.vpay.datacenter.view.TradeStatusLayout>

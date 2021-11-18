@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+	<RelativeLayout
+		android:id="@+id/content_panel"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingLeft="44dp"
+		android:paddingRight="44dp"
+		/>
+
+	<TextView
+		android:id="@+id/setting"
+		android:layout_width="144dp"
+		android:layout_height="72dp"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:gravity="center"
+		android:text="@string/setting_btn_setting"
+		android:textColor="@android:color/white"
+		android:textSize="16sp"/>
+
+	<LinearLayout
+		android:id="@+id/card_container"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:orientation="vertical"/>
+</RelativeLayout>

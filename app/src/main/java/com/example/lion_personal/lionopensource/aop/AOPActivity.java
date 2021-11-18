@@ -1,13 +1,10 @@
 package com.example.lion_personal.lionopensource.aop;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.lion_personal.lionopensource.R;
 import com.example.lion_personal.lionopensource.aop.annotation.BehaviorTimeTrace;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 public class AOPActivity extends AppCompatActivity {
 

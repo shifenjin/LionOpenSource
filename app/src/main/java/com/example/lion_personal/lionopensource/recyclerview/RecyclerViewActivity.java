@@ -1,10 +1,18 @@
 package com.example.lion_personal.lionopensource.recyclerview;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.paging.DataSource;
+import androidx.paging.LivePagedListBuilder;
+import androidx.paging.PagedList;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.View;
 
 import com.example.lion_personal.lionopensource.R;
@@ -29,23 +37,27 @@ public class RecyclerViewActivity extends AppCompatActivity {
             recyclerViewDataItemList.add(recyclerViewDataItem);
         }
         // Adapter
-//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, recyclerViewDataItemList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, recyclerViewDataItemList);
 
-//        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         // 布局模式
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         // 分割线
-//        recyclerView.addItemDecoration();
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, OrientationHelper.VERTICAL));
+//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {});
+        // 动画
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(null);
+//        itemTouchHelper.
         // 设置 adapter
-//        recyclerView.setAdapter(recyclerViewAdapter);
-//        recyclerView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 //               count();
-//            }
-//        });
+            }
+        });
         // 刷新数据
-//        recyclerViewAdapter.notifyDataSetChanged();
+        recyclerViewAdapter.notifyDataSetChanged();
 
 
     }

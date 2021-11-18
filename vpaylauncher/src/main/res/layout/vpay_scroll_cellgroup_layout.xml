@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.launcher.view.ScrollCellGroupLayout
+	android:id="@+id/cellLayout_side_scrollview"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" xmlns:cellGroupLayout="http://schemas.android.com/apk/res-auto">
+
+	<com.yunnex.vpay.view.vpay.VPayCellGroupLayout
+		android:id="@+id/cellLayout_side"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		cellGroupLayout:cell_limit_width="4"
+		cellGroupLayout:cell_limit_height="0"
+		cellGroupLayout:cell_limit_height_min="5">
+	</com.yunnex.vpay.view.vpay.VPayCellGroupLayout>
+
+</com.yunnex.vpay.launcher.view.ScrollCellGroupLayout>

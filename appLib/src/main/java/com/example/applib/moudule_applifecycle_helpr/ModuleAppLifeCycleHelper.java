@@ -1,5 +1,7 @@
 package com.example.applib.moudule_applifecycle_helpr;
 
+import android.app.Application;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -54,9 +56,9 @@ public class ModuleAppLifeCycleHelper {
     private void init() {
     }
 
-    public void onCreate() {
+    public void notifyApplicationOnCreate(Application application) {
         for (IModuleAppLifeCycle moduleAppLifeCycle : mModuleAppLifeCycleList) {
-            moduleAppLifeCycle.applicationOnCreate();
+            moduleAppLifeCycle.applicationOnCreate(application);
         }
     }
 }

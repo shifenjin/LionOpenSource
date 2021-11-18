@@ -85,7 +85,7 @@ class ModuleLifeCycleTransform extends Transform {
                     for (File file : fileList) {
 //                        System.out.println("class文件目录 ->" + file.getName());
                         // 如果是指定 class文件，缓存起来
-                        if (ModuleLifeCycleUtils.isModuleAppLifeCycleProxyClass(file)) {
+                        if (ModuleLifeCycleUtils.isModuleAppLifeCycleProxyClass(file.getName())) {
 //                            System.out.println("class文件目录 - 命中 ->" + file.getName());
                             moduleAppLifeCycleProxyClassFileNameList.add(file.getName());
                         }
@@ -119,19 +119,19 @@ class ModuleLifeCycleTransform extends Transform {
                 FileUtils.copyFile(jarInput.getFile(), contentLocationFile);
             }
 
-            // class文件名 转换为 class类名
-            List<String> moduleAppLifeCycleProxyClassNameList = new ArrayList<>();
-            for (String className : moduleAppLifeCycleProxyClassFileNameList) {
-                moduleAppLifeCycleProxyClassNameList.add(className.replace("/", ".").substring(0, className.length() - ".class".length()));
-            }
-
-            // 通过ASM注入字节码
-            new ModuleLifeCycleInject(moduleAppLifeCycleProxyClassNameList).inject();
-
-            for (String className : moduleAppLifeCycleProxyClassNameList) {
-                System.out.println("moduleAppLifeCycleProxyClassName -> " + className);
-            }
         }
 
+        // class文件名 转换为 class类名
+        List<String> moduleAppLifeCycleProxyClassNameList = new ArrayList<>();
+        for (String className : moduleAppLifeCycleProxyClassFileNameList) {
+            moduleAppLifeCycleProxyClassNameList.add(className.replace("/", ".").substring(0, className.length() - ".class".length()));
+        }
+
+        // 通过ASM注入字节码
+        new ModuleLifeCycleInject(moduleAppLifeCycleProxyClassNameList).inject();
+
+        for (String className : moduleAppLifeCycleProxyClassNameList) {
+            System.out.println("moduleAppLifeCycleProxyClassName -> " + className);
+        }
     }
 }

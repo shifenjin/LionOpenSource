@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_vpay_setting"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <RelativeLayout
+        android:id="@+id/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/empty_image"
+            android:layout_width="@dimen/dcb_setting_empty_img_size"
+            android:layout_height="@dimen/dcb_setting_empty_img_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dcb_setting_empty_img_margin"
+            android:src="@drawable/dcb_setting_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/empty_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dcb_setting_empty_text_margin"
+            android:text="@string/text_empty_desktop_setting"
+            android:textColor="@color/dcb_empty_tip"
+            android:textSize="@dimen/dcb_setting_empty_text_size" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/setting_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
+        android:listSelector="@null"
+        android:scrollbarStyle="insideOverlay" />
+
+</RelativeLayout>

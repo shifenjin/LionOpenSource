@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp">
+
+    <RelativeLayout
+        android:id="@+id/customLayout"
+        android:layout_width="320dp"
+        android:layout_height="260dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+        <!-- 数据中心Layout -->
+        <include
+            android:id="@+id/data_center_layout"
+            layout="@layout/data_center_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentTop="true"></include>
+
+        <!-- 消息中心Layout -->
+        <include
+            android:id="@+id/msg_center_layout"
+            layout="@layout/msg_center_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_below="@id/data_center_layout"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/cellLayout_main"
+        layout="@layout/cell_layout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="25dp"></include>
+</RelativeLayout>

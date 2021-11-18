@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.widget.shop_info.VPayShopInfoPanel
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:id="@+id/operatorName"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_alignParentLeft="true"
+		android:gravity="center_vertical"
+		android:maxLines="1"
+		android:textColor="@color/black"
+		android:textSize="@dimen/main_vpay_title_shopinfo_operator_text_size" />
+
+	<TextView
+		android:id="@+id/bar"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_toRightOf="@id/operatorName"
+		android:gravity="center_vertical"
+		android:maxLines="1"
+		android:text=" - "
+		android:textColor="@color/black"
+		android:textSize="@dimen/main_vpay_title_shopinfo_bar_text_size" />
+
+	<TextView
+		android:id="@+id/shopName"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_toRightOf="@id/bar"
+		android:gravity="center_vertical"
+		android:maxLines="1"
+		android:textColor="@color/black"
+		android:textSize="@dimen/main_vpay_title_shopinfo_shop_text_size" />
+</com.yunnex.vpay.widget.shop_info.VPayShopInfoPanel>

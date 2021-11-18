@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--xing.zheng modified for app icon keep rank on 2015-12-03 start
+old ：
+<com.yunnex.vpay.view.vpay.AppFixedLayout xmlns:android="http://schemas.android.com/apk/res/android"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"> -->
+
+<com.yunnex.vpay.view.vpay.AppFixedLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--xing.zheng modified for app icon keep rank on 2015-12-03 end -->
+    <LinearLayout
+        android:id="@+id/add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/addapp_dotted_line"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <ImageButton
+            android:id="@+id/add_fixed_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/add_app"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:id="@+id/add_app_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="13dp"
+            android:text="@string/add_app"
+            android:textColor="#427dcf"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/open_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="133dp"
+            android:background="@drawable/open_fixed_page"/>
+        <TextView
+            android:id="@+id/open_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="27dp"
+            android:text="@string/open_app"
+            android:textColor="#6ba0f0"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+</com.yunnex.vpay.view.vpay.AppFixedLayout>
+

@@ -43,14 +43,26 @@ public class AccountManager {
         accountLifeCycleListeners.remove(accountLifeCycleListener);
     }
 
-    public void onBeforeAccountInit() {
+    public void notifyBeforeAccountInit() {
         for (IAccountLifeCycleListener accountLifeCycleListener : accountLifeCycleListeners) {
             accountLifeCycleListener.onBeforeAccountInit();
         }
     }
-    public void onAfterAccountInit() {
+    public void notifyAfterAccountInit() {
         for (IAccountLifeCycleListener accountLifeCycleListener : accountLifeCycleListeners) {
             accountLifeCycleListener.onAfterAccountInit();
+        }
+    }
+
+    public void notifyBeforeAccountClear() {
+        for (IAccountLifeCycleListener accountLifeCycleListener : accountLifeCycleListeners) {
+            accountLifeCycleListener.onAfterAccountClear();
+        }
+    }
+
+    public void notifyAfterAccountClear() {
+        for (IAccountLifeCycleListener accountLifeCycleListener : accountLifeCycleListeners) {
+            accountLifeCycleListener.onAfterAccountClear();
         }
     }
 }

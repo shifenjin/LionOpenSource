@@ -3,6 +3,7 @@
     package="com.example.lion_personal.lionopensource">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".AppApplication"
@@ -12,12 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".MainActivity">
         </activity>
 
         <service
@@ -25,20 +21,29 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".RxjavaActivity" />
+        <activity android:name=".rxjava.RxjavaActivity" />
         <activity android:name=".OkhttpActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".GlideActivity" />
         <activity android:name=".database.SQLiteActivity" />
         <activity android:name=".data_structure.DataStructureActivity" />
         <activity android:name=".fragment.LionFragmentActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity"></activity>
-        <activity android:name=".annotation.AnnotationActivity">
-
-        </activity>
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
+        <activity android:name=".annotation.AnnotationActivity" />
         <activity
             android:name=".aop.AOPActivity"
-            android:windowSoftInputMode="stateVisible">
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name=".lifecycle.ViewModelActivity" />
+        <activity
+            android:name=".paging.PagingActivity"
+            android:label="@string/title_activity_paging"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.TestViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

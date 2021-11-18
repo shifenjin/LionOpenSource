@@ -1,17 +1,12 @@
 package com.example.lion_personal.lionopensource.data_structure;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lion_personal.lionopensource.R;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;

@@ -2,8 +2,8 @@ package com.example.appmouduleaccount.implement;
 
 import com.example.appmouduleaccount.api.account_lifecycle.IAccountLifeCycleListener;
 import com.example.appmouduleaccount.api.init.IInitAccountCallBack;
+import com.example.appmouduleaccount.implement.login.AccountLoginBuilder;
 import com.example.appmouduleaccount.implement.init.AccountInit;
-import com.example.appmouduleaccount.api.login.AccountLogin;
 import com.example.appmouduleaccount.api.IAccountService;
 
 public class AccountServiceImpl implements IAccountService {
@@ -11,8 +11,8 @@ public class AccountServiceImpl implements IAccountService {
 
 
     @Override
-    public AccountLogin.Builder createLoginBuilder() {
-        return new AccountLogin.Builder();
+    public AccountLoginBuilder createLoginBuilder() {
+        return new AccountLoginBuilder();
     }
 
     @Override

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LionOpenSource</string>
+    <string name="title_activity_paging">PagingActivity</string>
+    <string name="btn">我是按钮</string>
 </resources>

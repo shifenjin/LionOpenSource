@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.datacenter.DataCenterMainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 定义一个 ViewSwitcher 组件 -->
+    <ViewSwitcher
+        android:id="@+id/viewSwitcher"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <include
+            layout="@layout/sale_chart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></include>
+
+        <include
+            layout="@layout/trade_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></include>
+    </ViewSwitcher>
+
+    <include
+        android:id="@+id/date_time_layout"
+        layout="@layout/date_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></include>
+
+</com.yunnex.vpay.datacenter.DataCenterMainLayout>

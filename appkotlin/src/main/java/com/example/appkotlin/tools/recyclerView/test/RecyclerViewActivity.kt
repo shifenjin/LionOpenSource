@@ -1,7 +1,7 @@
 package com.example.appkotlin.tools.recyclerView.test
 
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import android.view.View
 import com.example.appkotlin.R
 import com.example.appkotlin.tools.recyclerView.setSimpleAdapter
@@ -23,7 +23,8 @@ class RecyclerViewActivity : RxAppCompatActivity() {
             recyclerViewDataItemList.add(recyclerViewDataItem)
         }
 
-        rv_test.layoutManager = GridLayoutManager(this, 3)
+        rv_test.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(this, 3)
         rv_test.setSimpleAdapter(recyclerViewDataItemList,
                 R.layout.activity_recycler_view_item) {
             view: View, recyclerViewDataItem: RecyclerViewDataItem ->

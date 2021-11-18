@@ -11,20 +11,28 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // break && continue
-        testBreakAndContinue()
 
-
-        // foreach
-        testForeach()
-
-        // 函数式表达式
-        testChange()
-
-        // 集合
-        testCollection()
+        print("hello")
+//        // break && continue
+//        testBreakAndContinue()
+//
+//
+//        // foreach
+//        testForeach()
+//
+//        // 函数式表达式
+//        testChange()
+//
+//        // 集合
+//        testCollection()
 
     }
+
+    fun sum(a: Int, b: Int): Int {
+        return a + b
+    }
+
+//    fun sum(a: Int, b: Int) = a + b
 
     private fun testCollection() {
         val onlyReadList = listOf<Any>()
@@ -38,13 +46,13 @@ class MainActivity : BaseActivity() {
     private fun testChange() {
         val list = mutableListOf(2, 1, 3, 5, 4)
         list
-                // 过滤
-                .filter { it.equals(3) }
-                // 排序
-                .sortedBy { it }
-                .sortedWith(compareByDescending({it}))
-                // 转换
-                .map { it.toString() }
+            // 过滤
+            .filter { it.equals(3) }
+            // 排序
+            .sortedBy { it }
+            .sortedWith(compareByDescending({ it }))
+            // 转换
+            .map { it.toString() }
     }
 
     private fun testForeach() {
@@ -58,6 +66,7 @@ class MainActivity : BaseActivity() {
                 info { it }
             }
         }
+
     }
 
     private fun testBreakAndContinue() {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunnex.vpay.launcher.view.LauncherPageLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cellGroupLayout="http://schemas.android.com/apk/res-auto"
+    xmlns:launcherPageLayout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    launcherPageLayout:cell_move_left="false"
+    launcherPageLayout:cell_move_right="true"
+    >
+
+    <RelativeLayout
+        android:id="@+id/customLayout"
+        android:layout_width="320dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+        <!-- 数据中心Layout -->
+        <include
+            android:id="@+id/data_center_layout"
+            layout="@layout/hef_data_center_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"></include>
+
+        <!-- 消息中心Layout -->
+        <include
+            android:id="@+id/msg_center_layout"
+            layout="@layout/hef_msg_center_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/data_center_layout"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+
+    <com.yunnex.vpay.view.vpay.VPayCellGroupLayout
+        android:id="@+id/cellLayout_main"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@id/customLayout"
+        android:layout_marginTop="18dp"
+        cellGroupLayout:cell_limit_width="4"
+        cellGroupLayout:cell_limit_height="2">
+    </com.yunnex.vpay.view.vpay.VPayCellGroupLayout>
+</com.yunnex.vpay.launcher.view.LauncherPageLayout>

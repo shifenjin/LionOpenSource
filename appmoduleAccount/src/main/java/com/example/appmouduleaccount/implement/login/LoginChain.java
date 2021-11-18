@@ -1,6 +1,6 @@
 package com.example.appmouduleaccount.implement.login;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.appmouduleaccount.api.login.ILoginCallBack;
 import com.example.appmouduleaccount.api.login.domain.LoginRequest;
@@ -41,14 +41,7 @@ public class LoginChain {
         if (index < 0) throw new IllegalArgumentException();
 
         // 登录责任链 完成
-        if (index >= loginInterceptors.size()) {
-            loginResult.isLoginSuccess = true;
-            loginResult.resultMsg = "登录成功";
-
-            if (loginCallBack != null)
-                loginCallBack.onSuccess(loginResult);
-        }
-        else {
+        if (index < loginInterceptors.size()) {
             LoginInterceptor loginInterceptor = loginInterceptors.get(index++);
             loginInterceptor.intercept(this);
         }
@@ -56,5 +49,9 @@ public class LoginChain {
 
     public ILoginCallBack getLoginCallBack() {
         return loginCallBack;
+    }
+
+    public LoginResult getLoginResult() {
+        return loginResult;
     }
 }

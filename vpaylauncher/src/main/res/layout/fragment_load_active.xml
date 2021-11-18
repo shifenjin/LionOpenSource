@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/load_title_panel"
+        android:layout_width="@dimen/load_active_title_panel_width"
+        android:layout_height="@dimen/load_active_title_panel_height"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="@dimen/load_active_title_panel_marginTop">
+
+        <ImageView
+            android:id="@+id/load_title_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/load_active_icon" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/register_number"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/active_register_number_marginTop"
+        android:background="@drawable/corner_input" >
+
+
+        <ImageView
+			android:id="@+id/img_active"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+			android:layout_centerVertical="true"
+            android:src="@drawable/load_pwd_new" />
+		<View android:layout_width="1dp"
+			  android:layout_height="match_parent"
+			  android:background="@color/color_blue_listview_bg"
+			  android:layout_toRightOf="@id/img_active"
+			  ></View>
+
+        <EditText
+            android:id="@+id/register_number_edit"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:background="@null"
+            android:hint="@string/load_register_number_hint"
+			android:textSize="13sp"
+            android:inputType="phone"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/register_number"
+        android:layout_alignRight="@id/register_number"
+        android:layout_below="@id/register_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" >
+
+        <com.yunnex.ui.textview.FButton
+            android:id="@+id/btn_register"
+            android:layout_width="270dp"
+            android:layout_height="48dp"
+			android:layout_centerHorizontal="true"
+            android:text="@string/register_btn"
+			android:textSize="13sp"
+			android:textColor="#0074eb"
+			fbutton:buttonColor="#9ad9ff"
+			fbutton:cornerRadius="4dp"
+			fbutton:shadowColor="#c7eaff"
+			fbutton:shadowEnabled="false" />
+
+		<Button
+			android:id="@+id/btn_registered"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/btn_register"
+			android:layout_marginTop="20dp"
+			android:text="@string/registered_btn"
+			android:layout_centerInParent="true"
+			android:textSize="13sp"
+			android:textColor="#9ad9ff"
+			android:background="@color/transparent"
+			/>
+    </RelativeLayout>
+
+</RelativeLayout>

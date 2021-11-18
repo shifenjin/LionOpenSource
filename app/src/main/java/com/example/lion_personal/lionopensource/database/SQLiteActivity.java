@@ -3,7 +3,7 @@ package com.example.lion_personal.lionopensource.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.lion_personal.lionopensource.R;
@@ -13,10 +13,8 @@ import com.example.lion_personal.lionopensource.database.domain.Student;
 import com.example.lion_personal.lionopensource.database.domain.StudentDao;
 
 import org.greenrobot.greendao.database.Database;
-import org.greenrobot.greendao.identityscope.IdentityScopeLong;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SQLiteActivity extends AppCompatActivity {

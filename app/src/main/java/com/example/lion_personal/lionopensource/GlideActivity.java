@@ -3,32 +3,26 @@ package com.example.lion_personal.lionopensource;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.transition.CircularPropagation;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.Key;
-import com.bumptech.glide.load.Transformation;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.FutureTarget;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
-import com.bumptech.glide.request.transition.Transition;
 import com.bumptech.glide.signature.ObjectKey;
 
 import java.io.File;
-import java.security.MessageDigest;
 import java.util.concurrent.ExecutionException;
 
 public class GlideActivity extends AppCompatActivity {
@@ -90,18 +84,19 @@ public class GlideActivity extends AppCompatActivity {
                         }
                     })
                     // 加载
-//                    .into(testImageView);
-                    .into(new SimpleTarget<Drawable>() {
-                        @Override
-                        public void onLoadStarted(@Nullable Drawable placeholder) {
-                            super.onLoadStarted(placeholder);
-                        }
+                    .into(testImageView);
+//                    .into(new SimpleTarget<Drawable>() {
+//                        @Override
+//                        public void onLoadStarted(@Nullable Drawable placeholder) {
+//                            super.onLoadStarted(placeholder);
+//                        }
+//
+//                        @Override
+//                        public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+//
+//                        }
+//                    });
 
-                        @Override
-                        public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-
-                        }
-                    });
 
                     // 预加载
 //                    .preload();
@@ -121,5 +116,6 @@ public class GlideActivity extends AppCompatActivity {
         });
 
         Bitmap bitmap;
+
     }
 }
